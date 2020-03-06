@@ -10,6 +10,7 @@ namespace TwentyOne
     {
         static void Main(string[] args)
         {
+
             Deck deck = new Deck();     //created a variable "deck" from the Deck class. Already has 52 cards from deck constructor
             deck.Shuffle(3);             //Calling the shuffle method from the Deck object class to shuffle (3) times
 
@@ -44,6 +45,28 @@ namespace TwentyOne
 //player.Name = "Jessie";
 //game += player;     //same as game = game + player; adds player w/overload operator method(Player class) 
 //game -= player;     //removes the same player with operator- Remove method
+//----------------------------------------------------------//
+
+
+//enums
+//----------------------------------------------------------//
+//DaysOfTheWeek day = DaysOfTheWeek.Friday;
+
+//public enum DaysOfTheWeek
+//{
+//    Sunday, Monday, Tuesday,
+//    Wednesday, Thursday, Friday,
+//    Saturday
+//}
+
+//ConsoleColor color = ConsoleColor.Red;   //ConsoleColor is a pre-loaded C# enum
+
+//Card card = new Card();
+//card.Suit = Suit.Hearts;    //implementing enum from Card.cs
+////card.Face = "Two";          //not using enum
+//int underlyingValue = (int) Suit.Diamonds;     //Casting Suit.Diamonds to an integer. Will be one per Card.cs Index
+//Console.WriteLine(underlyingValue);
+//Console.ReadLine();           //Will return 1
 //----------------------------------------------------------//
 
 
