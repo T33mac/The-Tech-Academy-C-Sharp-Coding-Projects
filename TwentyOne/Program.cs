@@ -10,16 +10,27 @@ namespace TwentyOne
     {
         static void Main(string[] args)
         {
-
-            Deck deck = new Deck();     //created a variable "deck" from the Deck class. Already has 52 cards from deck constructor
-            deck.Shuffle(3);             //Calling the shuffle method from the Deck object class to shuffle (3) times
-
-            foreach (Card card in deck.Cards)
+            Console.WriteLine("Welcome to the Grand Hotel and Casino. Let's start by telling me your name.");
+            string playerName = Console.ReadLine();
+            Console.WriteLine("And how much money did you bring today?");
+            int bank = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Hello, {0}. Would you like to join a game of 21 right now?", playerName);
+            string answer = Console.ReadLine().ToLower();
+            if (answer == "yes" || answer == "yeah" || answer == "y" || answer == "ya")    // "||" means or
             {
-                Console.WriteLine(card.Face + " of " + card.Suit);
+                Player player = new Player(playerName, bank);
+                Game game = new TwentyOneGame();
+                game += player;
+                player.isActivelyPlaying = true;
+                while (player.isActivelyPlaying && player.Balance > 0)    // "&&" and
+                {
+                    game.Play();
+                }
+                game -= player;
+                Console.WriteLine("Thank you for playing.");
             }
-            Console.WriteLine("\n" + deck.Cards.Count + " cards in the deck.");  //"Cards" is a property of deck 
-            Console.ReadLine();
+            Console.WriteLine("Bye for now. Feel free to look around the casino.");
+            Console.Read();
         }
     }
 }
@@ -68,5 +79,39 @@ namespace TwentyOne
 //Console.WriteLine(underlyingValue);
 //Console.ReadLine();           //Will return 1
 //----------------------------------------------------------//
+
+//----------------------------------------------------------//
+//Deck deck = new Deck();          //traditional counter to count Aces in deck
+//int counter = 0;
+//foreach (Card card in deck.Cards)
+//{
+//    if (card.Face == Face.Ace)
+//    {
+//        counter++;
+//    }
+//}
+//Console.WriteLine(counter);      //traditional counter to count Aces in deck
+//----------------------------------------------------------//
+
+//----------------------------------------------------------//
+//Deck deck = new Deck();
+//int count = deck.Cards.Count(x => x.Face == Face.Ace);  //.Count() is a Lambda function 
+//Console.WriteLine(count);                            //Counting everything where x == Face. x could be named anything
+//----------------------------------------------------------//
+
+//----------------------------------------------------------//
+//List<Card> newList = deck.Cards.Where(x => x.Face == Face.King).ToList();
+//foreach (Card card in newList)                                        //Another Lambda function "Where"
+//{
+//    Console.WriteLine(card.Suit);
+//}
+//----------------------------------------------------------//
+
+//----------------------------------------------------------//
+//List<int> numberList = new List<int>() { 1, 18, 12, 15, 22, 90, 3, 4, 5 };
+//int sum = numberList.Sum(x => x + 10); //.Sum(); by itself adds the list together. Function can be added in(Lambda)
+//Console.WriteLine(sum);               //.. parenthesis to affect each iteration. this one adds 10 to each item
+//----------------------------------------------------------//
+
 
 

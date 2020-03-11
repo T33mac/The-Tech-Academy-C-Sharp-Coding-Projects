@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace TwentyOne
 {
-    public class Card                       //make class public to use in other parts of the program *IMPORTANT*
+    public struct Card               //make struct public to use in other parts of the program *IMPORTANT* *Can't be null or inherited(struct)
     {
         
         public Suit Suit { get; set; }   //we made an class called "Suit" that you can get or set as spades, hearts, clubs, diamonds
