@@ -10,7 +10,7 @@ namespace TwentyOne
     {
         public string Name { get; set; }
         public Deck Deck { get; set; }
-        public int Balnce { get; set; }
+        public int Balance { get; set; }
 
         public void Deal(List<Card> Hand)
         {
