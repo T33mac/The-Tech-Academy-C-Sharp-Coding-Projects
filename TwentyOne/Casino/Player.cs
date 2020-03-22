@@ -8,6 +8,11 @@ namespace Casino
 {
     public class Player
     {
+        //Example of Constructor call chain
+        public Player(string name) : this(name, 100) //require name but assign beginning balance at 100 if null
+        {
+            //nothing else required here
+        }
         public Player(string name, int beginningBalance)
         {
             Hand = new List<Card>();
@@ -20,7 +25,7 @@ namespace Casino
         public string Name { get; set; }
         public bool isActivelyPlaying { get; set; }
         public bool Stay { get; set; }
-
+        public Guid Id { get; set; }
         public bool Bet(int amount)
         {
             if (Balance - amount < 0)
