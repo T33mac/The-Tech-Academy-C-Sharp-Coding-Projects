@@ -1,0 +1,33 @@
+﻿@using CarInsAppAssmtP_340.ViewModels
+@model List<DriverVm>
+
+<div class="row no-gutters m-3">
+    <div class="card col-sm-12 col-md-10 col-lg-6 mx-auto shadow">
+        <div class="card-header text-center">
+            <h5 class="m-0">Sign-ups</h5>
+        </div>
+        <div class="card-body">
+            @foreach (var driver in Model)
+            {
+                using (Html.BeginForm("Unsubscribe", "Admin", FormMethod.Post))
+                {
+                    /**<input //type="hidden" name="Id" value="@driver.Id" />**/
+                    <div class="row mb-3">
+                        <div class="col">
+                            @driver.FirstName
+                        </div>
+                        <div class="col">
+                            @driver.LastName
+                        </div>
+                        <div class="col">
+                            @driver.EmailAddress
+                        </div>
+                        <div class="col">
+                            <p>$@driver.Quote/month</p>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
