@@ -28,7 +28,7 @@
 
 @media (min-width: 768px) {
     /* On small screens, convert the nav menu to a vertical sidebar */
-    .main-nav {
+    /*.main-nav {
         height: 100%;
         width: calc(25% - 20px);
     }
@@ -36,6 +36,16 @@
         border-radius: 0px;
         border-width: 0px;
         height: 100%;
+    }*/
+    .main-nav {
+        height: calc(20% - 15px);
+        width: 100%;
+    }
+
+    .main-nav .navbar {
+        border-radius: 0px;
+        border-width: 0px;
+        width: 18%;
     }
     .main-nav .navbar-header {
         float: none;
