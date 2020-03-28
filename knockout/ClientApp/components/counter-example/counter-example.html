@@ -1,0 +1,37 @@
+<h1>Counter</h1>
+
+<p>This is a simple example of a Knockout component.</p>
+
+<h3>Current count: <strong data-bind='text: currentCount'></strong></h3>
+
+<button data-bind='click: incrementCounter'>+1</button>
+<p></p>
+<button data-bind='click: incrementCounter2'>-2</button>
+<p></p>
+<div class="heading">
+    <input type="checkbox" data-bind="checked: selectedAllProduce" title="Select all/none" /> Produce
+</div>
+<div data-bind="foreach: produce">
+    <label>
+        <input type="checkbox" data-bind="checkedValue: $data, checked: $parent.selectedProduce" />
+        <span data-bind="text: $data"></span>
+    </label>
+</div>
+<script>
+    function MyViewModel() {
+        this.produce = ['Apple', 'Banana', 'Celery', 'Corn', 'Orange', 'Spinach'];
+        this.selectedProduce = ko.observableArray(['Corn', 'Orange']);
+        this.selectedAllProduce = ko.pureComputed({
+            read: function () {
+                // Comparing length is quick and is accurate if only items from the
+                // main array are added to the selected array.
+                return this.selectedProduce().length === this.produce.length;
+            },
+            write: function (value) {
+                this.selectedProduce(value ? this.produce.slice(0) : []);
+            },
+            owner: this
+        });
+    }
+    ko.applyBindings(new MyViewModel());
+</script>
