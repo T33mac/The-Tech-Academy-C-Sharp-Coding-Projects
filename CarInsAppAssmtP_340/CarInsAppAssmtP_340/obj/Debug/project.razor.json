@@ -1,0 +1,19 @@
+{
+  "FilePath": "c:\\Users\\trmcg\\Documents\\GitHub\\The-Tech-Academy-C-Sharp-Coding-Projects\\CarInsAppAssmtP_340\\CarInsAppAssmtP_340\\CarInsAppAssmtP_340.csproj",
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": {
+    "TagHelpers": [],
+    "CSharpLanguageVersion": 703
+  },
+  "RootNamespace": null,
+  "Documents": [],
+  "SerializationFormat": "0.2"
+}
